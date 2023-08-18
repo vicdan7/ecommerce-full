@@ -140,7 +140,8 @@ const Home = () => {
         <div className='detail'>
           <h4>LATEST TECHNOLOGY ADDED</h4>
           <h3>Apple iPad 10.2 9th Gen - 2021</h3>
-          <p><BsCurrencyDollar /> 986</p>
+          <p>$ 986</p>
+          <Link to='/product' className='link'>Shop Now  <BsArrowRight /></Link>
         </div>
         <div className='img_box'>
           <img src={slider} alt="" />
