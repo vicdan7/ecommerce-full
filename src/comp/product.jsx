@@ -5,7 +5,20 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsEye } from 'react-icons/bs'
 import { AiOutlineHeart } from 'react-icons/ai'
 
-const Product = () => {
+const Product = ({product, setProduct}) => {
+  
+    const filtterproduct = (product) =>
+    {
+        const update = Productdetail.filter((x) =>
+        {
+            return x.Cat === product;
+        })
+        setProduct(update);
+    }
+    const AllProducts = () => 
+    {
+        setProduct(Productdetail)
+    }
   return (
     <>
     <div className='products'>
@@ -16,18 +29,19 @@ const Product = () => {
                 <div className='categories'>
                     <h3>categories</h3>
                     <ul>
-                        <li>Tablet</li>
-                        <li>Smart Watch</li>
-                        <li>Headphone</li>
-                        <li>Camera</li>
-                        <li>Gaming</li>
+                        <li onClick={() => AllProducts()}>All Products</li>
+                        <li onClick={() => filtterproduct("Tablet")}>Tablet</li>
+                        <li onClick={() => filtterproduct("Smart Watch")}>Smart Watch</li>
+                        <li onClick={() => filtterproduct("Headphone")}>Headphone</li>
+                        <li onClick={() => filtterproduct("Camera")}>Camera</li>
+                        <li onClick={() => filtterproduct("Gaming")}>Gaming</li>
                     </ul>
                 </div>
             </div>
             <div className='productbox'>
                 <div className='contant'>
                     {
-                        Productdetail.map((produ) =>
+                        product.map((produ) =>
                         {
                             return(
                                 <div className='box' key={produ.id}>

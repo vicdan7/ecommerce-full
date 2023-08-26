@@ -61,6 +61,7 @@
     transition: 0.5s;
     cursor: pointer;
     border-radius: 5px;
+    margin-right: 20px;
 }
 .products .container .productbox .contant .box:hover{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -104,10 +105,10 @@
 .products .container .productbox .contant .box .detail{
     margin-top: 10px;
 }
-/*.products .container .productbox .contant .box .detail p{
+.products .container .productbox .contant .box .detail p{
     color: #9a9a9a;
     font-size: 14px;
-}*/
+}
 .products .container .productbox .contant .box .detail h3{
     font-size: 14px;
     margin-top: 5px;
