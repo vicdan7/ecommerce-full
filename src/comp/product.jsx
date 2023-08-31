@@ -35,6 +35,8 @@ const Product = ({product, setProduct}) => {
                         <li onClick={() => filtterproduct("Headphone")}>Headphone</li>
                         <li onClick={() => filtterproduct("Camera")}>Camera</li>
                         <li onClick={() => filtterproduct("Gaming")}>Gaming</li>
+                        <li onClick={() => filtterproduct("Powerbank")}>Powerbank</li>
+                        <li onClick={() => filtterproduct("Electronics")}>Electronics</li>
                     </ul>
                 </div>
             </div>
