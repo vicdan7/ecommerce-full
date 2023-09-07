@@ -6,6 +6,9 @@ import Footer from "./comp/footer";
 import Productdetail from "./comp/productdetail";
 
 const App = () => {
+  // product detail
+  const [detail, setDetail] = useState([]);
+  // filter product
   const [product, setProduct] = useState(Productdetail);
   const searchbtn = (product) => {
     const change = Productdetail.filter((x) => {
@@ -14,11 +17,16 @@ const App = () => {
     
     setProduct(change);
   };
+  // product detail
+  const view = (product) => 
+  {
+    setDetail([{...product}])
+  }
   return (
     <>
       <BrowserRouter>
         <Nav searchbtn={searchbtn} />
-        <Rout product={product} setProduct={setProduct} />
+        <Rout product={product} setProduct={setProduct} detail={detail} view={view} />
         <Footer />
       </BrowserRouter>
     </>

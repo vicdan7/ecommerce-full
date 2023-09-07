@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsEye } from 'react-icons/bs'
 import { AiOutlineHeart } from 'react-icons/ai'
 
-const Product = ({product, setProduct}) => {
+const Product = ({product, setProduct, detail, view}) => {
   
     const filtterproduct = (product) =>
     {
@@ -21,6 +21,30 @@ const Product = ({product, setProduct}) => {
     }
   return (
     <>
+    <div className='product_detail'>
+        <div className='container'>
+            {
+                detail.map((deta) =>
+                {
+                    return(
+                        <div className='productbox'>
+                            <div className='img-box'>
+                                <img src={deta.Img} alt={deta.Title} />
+                            </div>
+                            <div className='detail'>
+                                <h4>{deta.Cat}</h4>
+                                <h2>{deta.Title}</h2>
+                                <p>A Screen Everyone Will Love: Whether your family is streaming or video chatting with friends</p>
+                                <h3>{deta.Price}</h3>
+                                <button>Add To Cart</button>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+            <div className='productbox'></div>
+        </div>
+    </div>
     <div className='products'>
         <h2># Products</h2>
         <p>Home . products</p>
@@ -51,7 +75,7 @@ const Product = ({product, setProduct}) => {
                                         <img src={produ.Img} alt={produ.Title}></img>
                                         <div className='icon'>
                                             <li><AiOutlineShoppingCart /></li>
-                                            <li><BsEye /></li>
+                                            <li onClick={() => view(produ)}><BsEye /></li>
                                             <li><AiOutlineHeart /></li>
                                         </div>
                                     </div>
