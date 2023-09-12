@@ -4,10 +4,11 @@ import './product.css';
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { BsEye } from 'react-icons/bs'
 import { AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
-const Product = ({product, setProduct, detail, view}) => {
-  
-    const filtterproduct = (product) =>
+const Product = ({product, setProduct, detail, view, close, setClose}) => {
+    
+   const filtterproduct = (product) =>
     {
         const update = Productdetail.filter((x) =>
         {
@@ -21,8 +22,11 @@ const Product = ({product, setProduct, detail, view}) => {
     }
   return (
     <>
-    <div className='product_detail'>
+    {
+        close ?
+        <div className='product_detail'>
         <div className='container'>
+            <button onClick={() => setClose(false)}><AiOutlineCloseCircle /></button>
             {
                 detail.map((deta) =>
                 {
@@ -44,7 +48,9 @@ const Product = ({product, setProduct, detail, view}) => {
             }
             <div className='productbox'></div>
         </div>
-    </div>
+    </div> : null
+    }
+
     <div className='products'>
         <h2># Products</h2>
         <p>Home . products</p>
